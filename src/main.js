@@ -98,8 +98,6 @@ function showCover(cover) {
   bookTagline2.innerText = cover.tagline2
 }
 
-// iteration 3
-
 function saveCurrentCover() {
  var match = false
   for (var i = 0; i < savedCovers.length; i++) {
@@ -137,9 +135,6 @@ function deleteSavedCover(e) {
       displaySavedCovers()
 
 }
-
-//make sure currentCover is saved and display savedCovers (128)
-
 
 // We've provided two functions to get you started
 function getRandomIndex(array) {
