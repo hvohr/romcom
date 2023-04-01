@@ -23,7 +23,7 @@ viewSaveCoverButton.addEventListener('click', viewSavedCovers);
 homeButton.addEventListener('click', displayHome);
 createNewBookButton.addEventListener('click', createNewBook);
 saveCoverButton.addEventListener('click', saveCurrentCover);
-
+savedCoversSection.addEventListener('dblclick', deleteSavedCover);
 
 function displayOwnCover() {
   viewHome.classList.add('hidden');
@@ -98,8 +98,6 @@ function showCover(cover) {
   bookTagline2.innerText = cover.tagline2
 }
 
-// iteration 3
-
 function saveCurrentCover() {
  var match = false
   for (var i = 0; i < savedCovers.length; i++) {
@@ -116,7 +114,6 @@ function saveCurrentCover() {
 
 function displaySavedCovers() {
   savedCoversSection.innerHTML = ''
-  console.log("help");
   for (var i = 0; i < savedCovers.length; i++) {
     console.log(savedCovers[i])
     savedCoversSection.innerHTML += `
@@ -129,8 +126,15 @@ function displaySavedCovers() {
   }
 };
 
-//make sure currentCover is saved and display savedCovers (128)
+function deleteSavedCover(e) {
+  for (var i = 0; i <savedCovers.length; i++) {
+      if (parseInt(e.target.closest('section').id) === savedCovers[i].id) {
+        savedCovers.splice(i, 1);
+      }
+  }
+      displaySavedCovers()
 
+}
 
 // We've provided two functions to get you started
 function getRandomIndex(array) {
