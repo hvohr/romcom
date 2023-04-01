@@ -10,10 +10,10 @@
 
 - The user must have access to a github and navigate to my github account hvohr/romcom. In order to clone the romcom repository, the user must click the green *code* button and copy the SSH key that is located there. The user then should navigate to terminal. The user should then type in the phrase git clone and then paste the copied SSH key. Using `ls` in the terminal, the user can see if this was successfully cloned. The user should move into the romcom directory and then type in `open index.html`. This will allow them to now see the functioning website. 
 
-
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
+- ![Screen Shot 2023-03-31 at 7 34 54 PM](https://user-images.githubusercontent.com/123392693/229259554-ada0a8d1-2685-4277-af55-ee36688f3451.png)
 
 
 ### Context:
