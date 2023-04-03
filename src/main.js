@@ -25,31 +25,41 @@ createNewBookButton.addEventListener('click', createNewBook);
 saveCoverButton.addEventListener('click', saveCurrentCover);
 savedCoversSection.addEventListener('dblclick', deleteSavedCover);
 
+function show(element) {
+  element.classList.remove('hidden')
+}
+
+function hide(element) {
+  element.classList.add('hidden')
+}
+
 function displayOwnCover() {
-  viewHome.classList.add('hidden');
-  viewForm.classList.remove('hidden');
-  showRandomCoverButton.classList.add('hidden');
-  saveCoverButton.classList.add('hidden');
-  homeButton.classList.remove('hidden');
+  hide(viewHome);
+  show(viewForm);
+  hide(showRandomCoverButton);
+  hide(saveCoverButton);
+  show(homeButton);
+  hide(savedView);
 }
 
 function viewSavedCovers() {
-  viewHome.classList.add('hidden');
-  saveCoverButton.classList.add('hidden');
-  showRandomCoverButton.classList.add('hidden');
-  homeButton.classList.remove('hidden');
-  viewForm.classList.add('hidden');
-  savedView.classList.remove('hidden');
+  hide(viewHome);
+  hide(saveCoverButton);
+  hide(showRandomCoverButton);
+  show(homeButton);
+  hide(viewForm);
+  show(savedView);
   displaySavedCovers();
 }
 
-function displayHome() {
-  viewHome.classList.remove('hidden');
-  viewForm.classList.add('hidden');
-  showRandomCoverButton.classList.remove('hidden');
-  saveCoverButton.classList.remove('hidden');
-  homeButton.classList.add('hidden');
-  makeYourOwnCoverButton.classList.remove('hidden');
+function displayHome() {  
+  show(viewHome);
+  hide(viewForm);
+  show(showRandomCoverButton);
+  show(saveCoverButton);
+  show(homeButton);
+  hide(homeButton);
+  show(makeYourOwnCoverButton);
 }
 
 function createNewBook() {
@@ -86,7 +96,6 @@ function makeRandomCover() {
   var descriptor1 = descriptors[getRandomIndex(descriptors)]
   var descriptor2 = descriptors[getRandomIndex(descriptors)]
   var cover = createCover(newCover, newTitle, descriptor1, descriptor2)
-  console.log(cover)
   currentCover = cover
   showCover(cover)
 }
@@ -151,5 +160,3 @@ function createCover(imgSrc, title, descriptor1, descriptor2) {
   }
   return cover
 }
-
-
